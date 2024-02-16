@@ -205,7 +205,10 @@ issues. This section provides troubleshooting tips when issues occur.
     basic authentication for this scenario.
 
 > [!NOTE]
-> If you use data loss prevention (DLP) policies to block the **HTTP with Microsoft Entra (preauthorized)** connector then **SharePoint** and **OData** connectors will fail. The **HTTP with Microsoft Entra (preauthorized)** connector needs to be allowed in DLP policies for **SharePoint** and **OData** connectors to work.
+> Data Loss Prevention policies should be reviewed to ensure none of the connectors used in the context of their Dataflow is currently blocked (SQL connector, Azure Blob Storage connector, etc).
+> Also, if you use data loss prevention (DLP) policies to block the **HTTP with Microsoft Entra ID (preauthorized)** connector then **SharePoint** and **OData** connectors will fail. The **HTTP with Microsoft Entra ID (preauthorized)** connector needs to be allowed in DLP policies for SharePoint and OData connectors to work.
+If the connector is enabled and the dataflows still fail, please make sure all the necessary endpoints are allowed in **Configure connector -> Connector endpoints (preview)** [Configure connector](/power-platform/admin/connector-endpoint-filtering#add-endpoint-filtering-rules-to-your-dlp-policies).
+
 
 ## Next steps
 
